@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GodSharp.Opc.Ua.Common</name>
+    </assembly>
+    <members>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>
+                Reserved to be used by the compiler for tracking metadata.
+                This class should not be used by developers in source code.
+            </summary>
+        </member>
+        <member name="T:GodSharp.Opc.Ua.ComplexTypes.ComplexObject">
+            <summary>
+            ComplexObject implement from <seealso cref="T:Opc.Ua.EncodeableObject"/>
+            </summary>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.OpcUaDiscoveryServer.GetEndpointInstance(Opc.Ua.ServerBase)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.OpcUaDiscoveryServer.FindServers(Opc.Ua.RequestHeader,System.String,Opc.Ua.StringCollection,Opc.Ua.StringCollection,Opc.Ua.ApplicationDescriptionCollection@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.OpcUaDiscoveryServer.GetEndpoints(Opc.Ua.RequestHeader,System.String,Opc.Ua.StringCollection,Opc.Ua.StringCollection,Opc.Ua.EndpointDescriptionCollection@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.OpcUaDiscoveryServer.GetEndpointDescriptions(System.String,System.Collections.Generic.IList{Opc.Ua.ServerBase.BaseAddress},Opc.Ua.StringCollection)">
+            <summary>
+            Returns the endpoints that match the base addresss and endpoint url.
+            </summary>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.OpcUaDiscoveryServer.RegisterServer(Opc.Ua.RequestHeader,Opc.Ua.RegisteredServer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.OpcUaDiscoveryServer.RegisterServer2(Opc.Ua.RequestHeader,Opc.Ua.RegisteredServer,Opc.Ua.ExtensionObjectCollection,Opc.Ua.StatusCodeCollection@,Opc.Ua.DiagnosticInfoCollection@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.OpcUaDiscoveryServer.InitializeServiceHosts(Opc.Ua.ApplicationConfiguration,Opc.Ua.Bindings.TransportListenerBindings,Opc.Ua.ApplicationDescription@,Opc.Ua.EndpointDescriptionCollection@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.OpcUaDiscoveryServer.CreateServiceHost(Opc.Ua.ServerBase,System.Uri[])">
+            <summary>
+            Creates an instance of the service host.
+            </summary>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.OpcUaServerDiscovery.DiscoveryInternal(System.String)">
+            <summary>
+            Discovery opc ua server
+            </summary>
+            <param name="host"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.OpcUaServerDiscovery.Discovery(System.String)">
+            <summary>
+            Discovery opc ua server
+            </summary>
+            <param name="host"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.OpcUaServerDiscovery.GetEndpoints(System.String)">
+            <summary>
+            get endpoints
+            </summary>
+            <param name="host"></param>
+            <returns></returns>
+        </member>
+        <member name="F:GodSharp.Opc.Ua.OpcUaHelper.GenerateApplicationConfigurationFile">
+            <summary>
+            whether generate config file,default is false.if true,will generate config file and can custom configration settings.
+            </summary>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Utilities.StructConverter.GetBytes``1(``0)">
+            <summary>
+            convert struct to byte array.
+            </summary>
+            <param name="t">the type</param>
+            <typeparam name="T">the type instance</typeparam>
+            <returns>byte array</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Utilities.StructConverter.GetStruct(System.Byte[],System.Type)">
+            <summary>
+            convert byte array to object
+            </summary>
+            <param name="bytes">the byte array</param>
+            <param name="type">the type</param>
+            <returns>a object</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Utilities.StructConverter.GetStruct``1(System.Byte[])">
+            <summary>
+            convert byte array to struct
+            </summary>
+            <param name="bytes">the byte array</param>
+            <typeparam name="T">the type</typeparam>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

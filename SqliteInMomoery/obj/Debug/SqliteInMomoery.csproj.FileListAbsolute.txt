@@ -1,0 +1,15 @@
+E:\远舢智能\规则引擎测\SqliteInMomoery\bin\Debug\SqliteInMomoery.exe.config
+E:\远舢智能\规则引擎测\SqliteInMomoery\bin\Debug\SqliteInMomoery.exe
+E:\远舢智能\规则引擎测\SqliteInMomoery\bin\Debug\SqliteInMomoery.pdb
+E:\远舢智能\规则引擎测\SqliteInMomoery\bin\Debug\SqlSugar.dll
+E:\远舢智能\规则引擎测\SqliteInMomoery\obj\Debug\SqliteInMomoery.csproj.AssemblyReference.cache
+E:\远舢智能\规则引擎测\SqliteInMomoery\obj\Debug\SqliteInMomoery.csproj.SuggestedBindingRedirects.cache
+E:\远舢智能\规则引擎测\SqliteInMomoery\obj\Debug\SqliteInMomoery.csproj.CoreCompileInputs.cache
+E:\远舢智能\规则引擎测\SqliteInMomoery\obj\Debug\SqliteInMomoery.csproj.CopyComplete
+E:\远舢智能\规则引擎测\SqliteInMomoery\obj\Debug\SqliteInMomoery.exe
+E:\远舢智能\规则引擎测\SqliteInMomoery\obj\Debug\SqliteInMomoery.pdb
+E:\远舢智能\规则引擎测\SqliteInMomoery\bin\Debug\System.Data.SQLite.dll
+E:\远舢智能\规则引擎测\SqliteInMomoery\bin\Debug\x64\SQLite.Interop.dll
+E:\远舢智能\规则引擎测\SqliteInMomoery\bin\Debug\x86\SQLite.Interop.dll
+E:\远舢智能\规则引擎测\SqliteInMomoery\bin\Debug\Dapper.dll
+E:\远舢智能\规则引擎测\SqliteInMomoery\bin\Debug\Dapper.xml

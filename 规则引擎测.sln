@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "规则引擎测", "规则引擎测\规则引擎测.csproj", "{BF25999A-B8E3-47CE-B424-7B679686C540}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuaRule", "LuaRule\LuaRule.csproj", "{0BE58CFB-56E3-4EC1-A06E-9DCEB563930A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PythonRule", "PythonRule\PythonRule.csproj", "{8940B7E6-719C-4690-96EF-29E1095791C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPC.Test", "OPC.Test\OPC.Test.csproj", "{D4E90DCE-912F-4CCC-A7B7-BEAE73E547B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuaRuleManager", "LuaRuleManager\LuaRuleManager.csproj", "{31A3B568-01D1-41A5-80B4-586381AB704B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqliteInMomoery", "SqliteInMomoery\SqliteInMomoery.csproj", "{26B37445-DCB9-4B7F-8D29-F06B2D2F7C56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF25999A-B8E3-47CE-B424-7B679686C540}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF25999A-B8E3-47CE-B424-7B679686C540}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF25999A-B8E3-47CE-B424-7B679686C540}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF25999A-B8E3-47CE-B424-7B679686C540}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE58CFB-56E3-4EC1-A06E-9DCEB563930A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE58CFB-56E3-4EC1-A06E-9DCEB563930A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE58CFB-56E3-4EC1-A06E-9DCEB563930A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE58CFB-56E3-4EC1-A06E-9DCEB563930A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8940B7E6-719C-4690-96EF-29E1095791C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8940B7E6-719C-4690-96EF-29E1095791C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8940B7E6-719C-4690-96EF-29E1095791C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8940B7E6-719C-4690-96EF-29E1095791C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E90DCE-912F-4CCC-A7B7-BEAE73E547B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E90DCE-912F-4CCC-A7B7-BEAE73E547B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E90DCE-912F-4CCC-A7B7-BEAE73E547B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E90DCE-912F-4CCC-A7B7-BEAE73E547B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31A3B568-01D1-41A5-80B4-586381AB704B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31A3B568-01D1-41A5-80B4-586381AB704B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31A3B568-01D1-41A5-80B4-586381AB704B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31A3B568-01D1-41A5-80B4-586381AB704B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26B37445-DCB9-4B7F-8D29-F06B2D2F7C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26B37445-DCB9-4B7F-8D29-F06B2D2F7C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26B37445-DCB9-4B7F-8D29-F06B2D2F7C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26B37445-DCB9-4B7F-8D29-F06B2D2F7C56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {78FE14F7-FDF2-4099-ADE9-4BEC597D6B67}
+	EndGlobalSection
+EndGlobal

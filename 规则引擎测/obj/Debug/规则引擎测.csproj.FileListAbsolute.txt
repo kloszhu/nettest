@@ -1,0 +1,15 @@
+E:\远舢智能\规则引擎测\规则引擎测\bin\Debug\规则引擎测.exe.config
+E:\远舢智能\规则引擎测\规则引擎测\bin\Debug\规则引擎测.exe
+E:\远舢智能\规则引擎测\规则引擎测\bin\Debug\规则引擎测.pdb
+E:\远舢智能\规则引擎测\规则引擎测\bin\Debug\NVelocity.dll
+E:\远舢智能\规则引擎测\规则引擎测\obj\Debug\规则引擎测.csproj.AssemblyReference.cache
+E:\远舢智能\规则引擎测\规则引擎测\obj\Debug\规则引擎测.Properties.Resources.resources
+E:\远舢智能\规则引擎测\规则引擎测\obj\Debug\规则引擎测.csproj.GenerateResource.cache
+E:\远舢智能\规则引擎测\规则引擎测\obj\Debug\规则引擎测.csproj.CoreCompileInputs.cache
+E:\远舢智能\规则引擎测\规则引擎测\obj\Debug\规则引擎测.csproj.CopyComplete
+E:\远舢智能\规则引擎测\规则引擎测\obj\Debug\规则引擎测.exe
+E:\远舢智能\规则引擎测\规则引擎测\obj\Debug\规则引擎测.pdb
+E:\远舢智能\规则引擎测\规则引擎测\obj\Debug\规则引擎测.规则引擎测测试.resources
+E:\远舢智能\规则引擎测\规则引擎测\bin\Debug\Newtonsoft.Json.dll
+E:\远舢智能\规则引擎测\规则引擎测\bin\Debug\Newtonsoft.Json.xml
+E:\远舢智能\规则引擎测\规则引擎测\obj\Debug\规则引擎测.csproj.SuggestedBindingRedirects.cache

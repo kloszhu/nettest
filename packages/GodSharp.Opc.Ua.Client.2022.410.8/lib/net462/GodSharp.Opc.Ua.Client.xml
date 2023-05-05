@@ -1,0 +1,3003 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GodSharp.Opc.Ua.Client</name>
+    </assembly>
+    <members>
+        <member name="T:System.Runtime.CompilerServices.IsExternalInit">
+            <summary>
+                Reserved to be used by the compiler for tracking metadata.
+                This class should not be used by developers in source code.
+            </summary>
+        </member>
+        <member name="F:GodSharp.Opc.Ua.AuthenticationMode.Anonymous">
+            <summary>
+            Anonymous
+            </summary>
+        </member>
+        <member name="F:GodSharp.Opc.Ua.AuthenticationMode.Account">
+            <summary>
+            Username and Password
+            </summary>
+        </member>
+        <member name="F:GodSharp.Opc.Ua.AuthenticationMode.Certification">
+            <summary>
+            Certification and Private key
+            </summary>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.GetAttributes(Opc.Ua.Client.Session,Opc.Ua.NodeId)">
+            <summary>
+            get attributes with specialized node.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Browse(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.BrowseDirection,Opc.Ua.NodeId,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Browse node
+            </summary>
+            <param name="session"></param>
+            <param name="node"></param>
+            <param name="direction">Default is <seealso cref="F:Opc.Ua.BrowseDirection.Forward"/></param>
+            <param name="referenceTypeId">Default is : <seealso cref="F:Opc.Ua.ReferenceTypeIds.Organizes"/></param>
+            <param name="includeSubtype"></param>
+            <param name="nodeClassMask">Default is : (int) (NodeClass.Variable | NodeClass.Object | NodeClass.Method)</param>
+            <returns></returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.BrowseTree(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,Opc.Ua.BrowseDirection,Opc.Ua.NodeId,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Browse node tree
+            </summary>
+            <param name="session"></param>
+            <param name="node"></param>
+            <param name="depth">Default is -1,not limit</param>
+            <param name="direction">Default is <seealso cref="F:Opc.Ua.BrowseDirection.Forward"/></param>
+            <param name="referenceTypeId">Default is : <seealso cref="F:Opc.Ua.ReferenceTypeIds.HierarchicalReferences"/></param>
+            <param name="includeSubtype"></param>
+            <param name="nodeClassMask">Default is : (int) (NodeClass.Variable | NodeClass.Object | NodeClass.Method)</param>
+            <returns></returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.FormatReferenceDescriptionText(Opc.Ua.ReferenceDescription)">
+            <summary>
+            get display text
+            </summary>
+            <param name="reference"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.FormatAttributeValue(System.UInt32,System.Object,Opc.Ua.Client.Session)">
+            <summary>
+            Formats the value of an attribute.
+            </summary>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Call(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.NodeId,System.Object[])">
+            <summary>
+            Calls the specified method and returns the output arguments.
+            </summary>
+            <param name="session">The instance of session.</param>
+            <param name="objectId">The NodeId of the object that provides the method.</param>
+            <param name="methodId">The NodeId of the method to call.</param>
+            <param name="args">The input arguments.</param>
+            <returns>The list of output argument values.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.CallAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.NodeId,System.Object[])">
+            <summary>
+            Calls the specified method and returns the output arguments.
+            </summary>
+            <param name="session">The instance of session.</param>
+            <param name="objectId">The NodeId of the object that provides the method.</param>
+            <param name="methodId">The NodeId of the method to call.</param>
+            <param name="args">The input arguments.</param>
+            <returns>The list of output argument values.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.GetProperties(Opc.Ua.Client.Session,Opc.Ua.NodeId)">
+            <summary>
+            get properties with specialized node.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId})">
+            <summary>
+            Read values with specialized node set.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read``1(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId},``0)">
+            <summary>
+            Read values with specialized node set.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read(Opc.Ua.Client.Session,Opc.Ua.NodeId)">
+            <summary>
+            Read value with specialized node.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0)">
+            <summary>
+            Read value with specialized node.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Read values with specialized node id set.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read``1(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.String},``0)">
+            <summary>
+            Read values with specialized node id set.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read(Opc.Ua.Client.Session,System.String)">
+            <summary>
+            Read value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read``1(Opc.Ua.Client.Session,System.String,``0)">
+            <summary>
+            Read value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read(Opc.Ua.Client.Session,System.ValueTuple{Opc.Ua.NodeId,System.String}[])">
+            <summary>
+            Read array values with specialized array node and range set.
+            <br/>range is 0:1 or 0,2,4
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/> and <see cref="T:System.String"/> range kv.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read``1(Opc.Ua.Client.Session,System.ValueTuple{Opc.Ua.NodeId,System.String}[],``0[])">
+            <summary>
+            Read array values with specialized array node and range set.
+            <br/>range is 0:1 or 0,2,4
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/> and <see cref="T:System.String"/> range kv.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/> array.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read(Opc.Ua.Client.Session,System.String,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is -1:read to end.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read``1(Opc.Ua.Client.Session,System.String,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read(Opc.Ua.Client.Session,System.String,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read``1(Opc.Ua.Client.Session,System.String,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read(Opc.Ua.Client.Session,System.String,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Read``1(Opc.Ua.Client.Session,System.String,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId})">
+            <summary>
+            Read values with specialized node set by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync``1(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId},``0)">
+            <summary>
+            Read values with specialized node set by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId)">
+            <summary>
+            Read value with specialized node by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0)">
+            <summary>
+            Read value with specialized node by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Read values with specialized node id set by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync``1(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.String},``0)">
+            <summary>
+            Read values with specialized node id set by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,System.String)">
+            <summary>
+            Read value with specialized node id by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync``1(Opc.Ua.Client.Session,System.String,``0)">
+            <summary>
+            Read value with specialized node id by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.ValueTuple{Opc.Ua.NodeId,System.String}})">
+            <summary>
+            Read array values with specialized array node and range set by asynchronous.
+            <br/>range is 0:1 or 0,2,4
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:System.String"/> and <see cref="T:System.String"/> range kv.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync``1(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.ValueTuple{Opc.Ua.NodeId,System.String}},``0[])">
+            <summary>
+            Read array values with specialized array node and range set by asynchronous.
+            <br/>range is 0:1 or 0,2,4
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:System.String"/> and <see cref="T:System.String"/> range kv.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.String)">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="range">the range of <see cref="T:System.String"/> like 0:1 or 0,2,4.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,System.String,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync``1(Opc.Ua.Client.Session,System.String,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,System.String,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync``1(Opc.Ua.Client.Session,System.String,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync(Opc.Ua.Client.Session,System.String,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.ReadAsync``1(Opc.Ua.Client.Session,System.String,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.RegisterNodes(Opc.Ua.Client.Session,Opc.Ua.NodeId[])">
+            <summary>
+            Register nodes,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.RegisterNodes(Opc.Ua.Client.Session,System.String[])">
+            <summary>
+            Register nodes,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.UnregisterNodes(Opc.Ua.Client.Session,Opc.Ua.NodeId[])">
+            <summary>
+            Unregister nodes
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.UnregisterNodes(Opc.Ua.Client.Session,System.String[])">
+            <summary>
+            Unregister nodes
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.RegisterNodesAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId[])">
+            <summary>
+            Register nodes by asynchronous,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.RegisterNodesAsync(Opc.Ua.Client.Session,System.String[])">
+            <summary>
+            Register nodes by asynchronous,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.UnregisterNodesAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId[])">
+            <summary>
+            Unregister nodes by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.UnregisterNodesAsync(Opc.Ua.Client.Session,System.String[])">
+            <summary>
+            Unregister nodes by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Subscribe(Opc.Ua.Client.Session,System.String,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId},System.Action{System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/> node id.</param>
+            <param name="notificationHandler">the method to callback when monitored node changed.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Subscribe(Opc.Ua.Client.Session,System.String,System.Collections.Generic.IEnumerable{Opc.Ua.ReferenceDescription},System.Action{System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.ReferenceDescription"/> node id.</param>
+            <param name="notificationHandler">the method to callback when monitored node changed.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Subscribe(Opc.Ua.Client.Session,System.String,System.Collections.Generic.IEnumerable{System.String},System.Action{System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <param name="notificationHandler">the method to callback when monitored node changed.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Unsubscribe(Opc.Ua.Client.Session,System.String)">
+            <summary>
+            Unsubscribe subscription group with specialized name.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="name">the name of subscribe group.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Unsubscribe(Opc.Ua.Client.Session,System.String,System.String[])">
+            <summary>
+            Unsubscribe items nodes with specialized name.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.Client.MonitoredItem"/> node id.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.UnsubscribeAll(Opc.Ua.Client.Session)">
+            <summary>
+            Unsubscribe all groups.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write(Opc.Ua.Client.Session,System.ValueTuple{Opc.Ua.NodeId,System.Object}[])">
+            <summary>
+            Write values with specialized node ids.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write(Opc.Ua.Client.Session,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Write values with specialized node ids.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Object)">
+            <summary>
+            Write value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write(Opc.Ua.Client.Session,System.String,System.Object)">
+            <summary>
+            Write value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0[])">
+            <summary>
+            Write enum array values with specialized node.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,System.String,``0[])">
+            <summary>
+            Write enum array values with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,System.String,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,System.ValueTuple{Opc.Ua.NodeId,``0[],System.String}[])">
+            <summary>
+            Write array values with specialized array node ids and range.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,System.ValueTuple{System.String,``0[],System.String}[])">
+            <summary>
+            Write array values with specialized array node ids and range.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,System.ValueTuple{Opc.Ua.NodeId,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,System.ValueTuple{System.String,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the array node.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,System.String,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the array node id.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,System.String,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,System.String,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.Write``1(Opc.Ua.Client.Session,System.String,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync(Opc.Ua.Client.Session,Opc.Ua.WriteValueCollection)">
+            <summary>
+            Write values with specialized node ids by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.ValueTuple{Opc.Ua.NodeId,System.Object}})">
+            <summary>
+            Write values with specialized node ids by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.Object}})">
+            <summary>
+            Write values with specialized node ids by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Object)">
+            <summary>
+            Write value with specialized node id by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync(Opc.Ua.Client.Session,System.String,System.Object)">
+            <summary>
+            Write value with specialized node id by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0[])">
+            <summary>
+            Write enum values with specialized node by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,System.String,``0[])">
+            <summary>
+            Write enum values with specialized node id by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,System.String,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,System.ValueTuple{Opc.Ua.NodeId,``0[],System.String}[])">
+            <summary>
+            Write array values with specialized array node ids and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,System.ValueTuple{System.String,``0[],System.String}[])">
+            <summary>
+            Write array values with specialized array node ids and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,System.ValueTuple{Opc.Ua.NodeId,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,System.ValueTuple{System.String,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the array node.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,System.String,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the array node id.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,System.String,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,System.String,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaHelper.WriteAsync``1(Opc.Ua.Client.Session,System.String,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Browse(Opc.Ua.NodeId,Opc.Ua.BrowseDirection,Opc.Ua.NodeId,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Browse node
+            </summary>
+            <param name="node"></param>
+            <param name="direction">Default is <seealso cref="F:Opc.Ua.BrowseDirection.Forward"/></param>
+            <param name="referenceTypeId">Default is : <seealso cref="F:Opc.Ua.ReferenceTypeIds.Organizes"/></param>
+            <param name="includeSubtype"></param>
+            <param name="nodeClassMask">Default is : (int) (NodeClass.Variable | NodeClass.Object | NodeClass.Method)</param>
+            <returns></returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.BrowseTree(Opc.Ua.NodeId,System.Int32,Opc.Ua.BrowseDirection,Opc.Ua.NodeId,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Browse node tree
+            </summary>
+            <param name="node"></param>
+            <param name="depth">Default is -1,not limit</param>
+            <param name="direction">Default is <seealso cref="F:Opc.Ua.BrowseDirection.Forward"/></param>
+            <param name="referenceTypeId">Default is : <seealso cref="F:Opc.Ua.ReferenceTypeIds.HierarchicalReferences"/></param>
+            <param name="includeSubtype"></param>
+            <param name="nodeClassMask">Default is : (int) (NodeClass.Variable | NodeClass.Object | NodeClass.Method)</param>
+            <returns></returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.GetAttributes(Opc.Ua.NodeId)">
+            <summary>
+            get attributes with specialized node.
+            </summary>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.GetProperties(Opc.Ua.NodeId)">
+            <summary>
+            get properties with specialized node.
+            </summary>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Subscribe(System.String,System.Collections.Generic.IEnumerable{Opc.Ua.ReferenceDescription},System.Action{System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.ReferenceDescription"/> node id.</param>
+            <param name="notificationHandler">the method to callback when monitored node changed.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Subscribe(System.String,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId},System.Action{System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/> node id.</param>
+            <param name="notificationHandler">the method to callback when monitored node changed.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Subscribe(System.String,System.Collections.Generic.IEnumerable{System.String},System.Action{System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <param name="notificationHandler">the method to callback when monitored node changed.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Unsubscribe(System.String)">
+            <summary>
+            Unsubscribe subscription group with specialized name.
+            </summary>
+            <param name="name">the name of subscribe group.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Unsubscribe(System.String,System.String[])">
+            <summary>
+            Unsubscribe items nodes with specialized name.
+            </summary>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.Client.MonitoredItem"/> node id.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.UnsubscribeAll">
+            <summary>
+            Unsubscribe all groups.
+            </summary>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Subscribe(System.String,System.Collections.Generic.IEnumerable{Opc.Ua.ReferenceDescription},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.ReferenceDescription"/> node id.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Subscribe(System.String,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/> node id.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Subscribe(System.String,System.Collections.Generic.IEnumerable{System.String},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.RegisterNodes(Opc.Ua.NodeId[])">
+            <summary>
+            Register nodes,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.RegisterNodes(System.String[])">
+            <summary>
+            Register nodes,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.UnregisterNodes(Opc.Ua.NodeId[])">
+            <summary>
+            Unregister nodes
+            </summary>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.UnregisterNodes(System.String[])">
+            <summary>
+            Unregister nodes
+            </summary>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.RegisterNodesAsync(Opc.Ua.NodeId[])">
+            <summary>
+            Register nodes by asynchronous,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.RegisterNodesAsync(System.String[])">
+            <summary>
+            Register nodes by asynchronous,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.UnregisterNodesAsync(Opc.Ua.NodeId[])">
+            <summary>
+            Unregister nodes by asynchronous.
+            </summary>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.UnregisterNodesAsync(System.String[])">
+            <summary>
+            Unregister nodes by asynchronous.
+            </summary>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Call(Opc.Ua.NodeId,Opc.Ua.NodeId,System.Object[])">
+            <summary>
+            Calls the specified method and returns the output arguments.
+            </summary>
+            <param name="objectId">The NodeId of the object that provides the method.</param>
+            <param name="methodId">The NodeId of the method to call.</param>
+            <param name="args">The input arguments.</param>
+            <returns>The list of output argument values.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.CallAsync(Opc.Ua.NodeId,Opc.Ua.NodeId,System.Object[])">
+            <summary>
+            Calls the specified method and returns the output arguments.
+            </summary>
+            <param name="objectId">The NodeId of the object that provides the method.</param>
+            <param name="methodId">The NodeId of the method to call.</param>
+            <param name="args">The input arguments.</param>
+            <returns>The list of output argument values.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read(System.Collections.Generic.IEnumerable{Opc.Ua.NodeId})">
+            <summary>
+            Read values with specialized node set.
+            </summary>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read``1(System.Collections.Generic.IEnumerable{Opc.Ua.NodeId},``0)">
+            <summary>
+            Read values with specialized node set.
+            </summary>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read(Opc.Ua.NodeId)">
+            <summary>
+            Read value with specialized node.
+            </summary>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read``1(Opc.Ua.NodeId,``0)">
+            <summary>
+            Read value with specialized node.
+            </summary>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Read values with specialized node id set.
+            </summary>
+            <param name="nodeIds">the set of node id.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read``1(System.Collections.Generic.IEnumerable{System.String},``0)">
+            <summary>
+            Read values with specialized node id set.
+            </summary>
+            <param name="nodeIds">the set of node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read(System.String)">
+            <summary>
+            Read value with specialized node id.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read``1(System.String,``0)">
+            <summary>
+            Read value with specialized node id.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read(Opc.Ua.NodeId,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read``1(Opc.Ua.NodeId,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read(System.String,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is -1:read to end.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read``1(System.String,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read(Opc.Ua.NodeId,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read``1(Opc.Ua.NodeId,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read(System.String,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read``1(System.String,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read(Opc.Ua.NodeId,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read(System.String,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read``1(Opc.Ua.NodeId,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Read``1(System.String,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync(System.Collections.Generic.IEnumerable{Opc.Ua.NodeId})">
+            <summary>
+            Read values with specialized node set by asynchronous.
+            </summary>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync``1(System.Collections.Generic.IEnumerable{Opc.Ua.NodeId},``0)">
+            <summary>
+            Read values with specialized node set by asynchronous.
+            </summary>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync(Opc.Ua.NodeId)">
+            <summary>
+            Read value with specialized node by asynchronous.
+            </summary>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync``1(Opc.Ua.NodeId,``0)">
+            <summary>
+            Read value with specialized node by asynchronous.
+            </summary>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Read values with specialized node id set by asynchronous.
+            </summary>
+            <param name="nodeIds">the set of node id.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync``1(System.Collections.Generic.IEnumerable{System.String},``0)">
+            <summary>
+            Read values with specialized node id set by asynchronous.
+            </summary>
+            <param name="nodeIds">the set of node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync(System.String)">
+            <summary>
+            Read value with specialized node id by asynchronous.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync``1(System.String,``0)">
+            <summary>
+            Read value with specialized node id by asynchronous.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync(Opc.Ua.NodeId,System.String)">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="range">the range of <see cref="T:System.String"/> like 0:1 or 0,2,4.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync(Opc.Ua.NodeId,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync``1(Opc.Ua.NodeId,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync(System.String,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync``1(System.String,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync(Opc.Ua.NodeId,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync``1(Opc.Ua.NodeId,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync(System.String,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync``1(System.String,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync(Opc.Ua.NodeId,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync(System.String,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync``1(Opc.Ua.NodeId,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.ReadAsync``1(System.String,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write(System.ValueTuple{Opc.Ua.NodeId,System.Object}[])">
+            <summary>
+            Write values with specialized node ids.
+            </summary>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write(System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Write values with specialized node ids.
+            </summary>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write(Opc.Ua.NodeId,System.Object)">
+            <summary>
+            Write value with specialized node id.
+            </summary>
+            <param name="node">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write(System.String,System.Object)">
+            <summary>
+            Write value with specialized node id.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(Opc.Ua.NodeId,``0[])">
+            <summary>
+            Write enum array values with specialized node.
+            </summary>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(System.String,``0[])">
+            <summary>
+            Write enum array values with specialized node id.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(Opc.Ua.NodeId,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="node">the node.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(System.String,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(System.ValueTuple{Opc.Ua.NodeId,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(System.ValueTuple{System.String,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(Opc.Ua.NodeId,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="node">the array node.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(System.String,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="nodeId">the array node id.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(Opc.Ua.NodeId,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size.
+            </summary>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(System.String,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(Opc.Ua.NodeId,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size.
+            </summary>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(System.String,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(Opc.Ua.NodeId,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs.
+            </summary>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.Write``1(System.String,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync(System.Collections.Generic.IEnumerable{System.ValueTuple{Opc.Ua.NodeId,System.Object}})">
+            <summary>
+            Write values with specialized node ids by asynchronous.
+            </summary>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync(System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.Object}})">
+            <summary>
+            Write values with specialized node ids by asynchronous.
+            </summary>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync(Opc.Ua.NodeId,System.Object)">
+            <summary>
+            Write value with specialized node id by asynchronous.
+            </summary>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync(System.String,System.Object)">
+            <summary>
+            Write value with specialized node id by asynchronous.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(Opc.Ua.NodeId,``0[])">
+            <summary>
+            Write enum values with specialized node by asynchronous.
+            </summary>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(System.String,``0[])">
+            <summary>
+            Write enum values with specialized node id by asynchronous.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(Opc.Ua.NodeId,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="node">the node.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(System.String,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(System.ValueTuple{Opc.Ua.NodeId,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(System.ValueTuple{System.String,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(Opc.Ua.NodeId,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="node">the array node.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(System.String,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="nodeId">the array node id.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(Opc.Ua.NodeId,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size by asynchronous.
+            </summary>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(System.String,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size by asynchronous.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(Opc.Ua.NodeId,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size by asynchronous.
+            </summary>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(System.String,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size by asynchronous.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(Opc.Ua.NodeId,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs by asynchronous.
+            </summary>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.SessionWrapper.WriteAsync``1(System.String,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs by asynchronous.
+            </summary>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Browse(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.BrowseDirection,Opc.Ua.NodeId,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Browse node
+            </summary>
+            <param name="session"></param>
+            <param name="node"></param>
+            <param name="direction">Default is <seealso cref="F:Opc.Ua.BrowseDirection.Forward"/></param>
+            <param name="referenceTypeId">Default is : <seealso cref="F:Opc.Ua.ReferenceTypeIds.Organizes"/></param>
+            <param name="includeSubtype"></param>
+            <param name="nodeClassMask">Default is : (int) (NodeClass.Variable | NodeClass.Object | NodeClass.Method)</param>
+            <returns></returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.BrowseTree(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,Opc.Ua.BrowseDirection,Opc.Ua.NodeId,System.Boolean,System.Nullable{System.Int32})">
+            <summary>
+            Browse node tree
+            </summary>
+            <param name="session"></param>
+            <param name="node"></param>
+            <param name="depth">Default is -1,not limit</param>
+            <param name="direction">Default is <seealso cref="F:Opc.Ua.BrowseDirection.Forward"/></param>
+            <param name="referenceTypeId">Default is : <seealso cref="F:Opc.Ua.ReferenceTypeIds.HierarchicalReferences"/></param>
+            <param name="includeSubtype"></param>
+            <param name="nodeClassMask">Default is : (int) (NodeClass.Variable | NodeClass.Object | NodeClass.Method)</param>
+            <returns></returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.GetAttributes(Opc.Ua.Client.Session,Opc.Ua.NodeId)">
+            <summary>
+            get attributes with specialized node.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.GetProperties(Opc.Ua.Client.Session,Opc.Ua.NodeId)">
+            <summary>
+            get properties with specialized node.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Subscribe(Opc.Ua.Client.Session,System.String,System.Collections.Generic.IEnumerable{Opc.Ua.ReferenceDescription},System.Action{System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.ReferenceDescription"/> node id.</param>
+            <param name="notificationHandler">the method to callback when monitored node changed.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Subscribe(Opc.Ua.Client.Session,System.String,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId},System.Action{System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/> node id.</param>
+            <param name="notificationHandler">the method to callback when monitored node changed.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Subscribe(Opc.Ua.Client.Session,System.String,System.Collections.Generic.IEnumerable{System.String},System.Action{System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs},System.Action{Opc.Ua.Client.Subscription},System.Int32)">
+            <summary>
+            Subscribe nodes with specialized parameters
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <param name="notificationHandler">the method to callback when monitored node changed.</param>
+            <param name="configure">the action to fix options for subscription</param>
+            <param name="samplingInterval">the value of <see cref="T:Opc.Ua.Client.MonitoredItem"/> SamplingInterval.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Unsubscribe(Opc.Ua.Client.Session,System.String)">
+            <summary>
+            Unsubscribe subscription group with specialized name.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="name">the name of subscribe group.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Unsubscribe(Opc.Ua.Client.Session,System.String,System.String[])">
+            <summary>
+            Unsubscribe items nodes with specialized name.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="name">the name of subscribe group.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.Client.MonitoredItem"/> node id.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.UnsubscribeAll(Opc.Ua.Client.Session)">
+            <summary>
+            Unsubscribe all groups.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <returns>a <see cref="T:System.Boolean"/> value.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.RegisterNodes(Opc.Ua.Client.Session,Opc.Ua.NodeId[])">
+            <summary>
+            Register nodes,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.RegisterNodes(Opc.Ua.Client.Session,System.String[])">
+            <summary>
+            Register nodes,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.UnregisterNodes(Opc.Ua.Client.Session,Opc.Ua.NodeId[])">
+            <summary>
+            Unregister nodes
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.UnregisterNodes(Opc.Ua.Client.Session,System.String[])">
+            <summary>
+            Unregister nodes
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.RegisterNodesAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId[])">
+            <summary>
+            Register nodes by asynchronous,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.RegisterNodesAsync(Opc.Ua.Client.Session,System.String[])">
+            <summary>
+            Register nodes by asynchronous,from ns=3;s=bool to ns=9;i=1.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>return <seealso cref="T:Opc.Ua.NodeId"/> array.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.UnregisterNodesAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId[])">
+            <summary>
+            Unregister nodes by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.UnregisterNodesAsync(Opc.Ua.Client.Session,System.String[])">
+            <summary>
+            Unregister nodes by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the nodes.</param>
+            <returns>a bool.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Call(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.NodeId,System.Object[])">
+            <summary>
+            Calls the specified method and returns the output arguments.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="objectId">The NodeId of the object that provides the method.</param>
+            <param name="methodId">The NodeId of the method to call.</param>
+            <param name="args">The input arguments.</param>
+            <returns>The list of output argument values.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.CallAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.NodeId,System.Object[])">
+            <summary>
+            Calls the specified method and returns the output arguments.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="objectId">The NodeId of the object that provides the method.</param>
+            <param name="methodId">The NodeId of the method to call.</param>
+            <param name="args">The input arguments.</param>
+            <returns>The list of output argument values.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId})">
+            <summary>
+            Read values with specialized node set.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read``1(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId},``0)">
+            <summary>
+            Read values with specialized node set.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read(Opc.Ua.Client.Session,Opc.Ua.NodeId)">
+            <summary>
+            Read value with specialized node.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0)">
+            <summary>
+            Read value with specialized node.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Read values with specialized node id set.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read``1(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.String},``0)">
+            <summary>
+            Read values with specialized node id set.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read(Opc.Ua.Client.Session,System.String)">
+            <summary>
+            Read value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read``1(Opc.Ua.Client.Session,System.String,``0)">
+            <summary>
+            Read value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read(Opc.Ua.Client.Session,System.String,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is -1:read to end.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read``1(Opc.Ua.Client.Session,System.String,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read(Opc.Ua.Client.Session,System.String,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read``1(Opc.Ua.Client.Session,System.String,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read(Opc.Ua.Client.Session,System.String,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Read``1(Opc.Ua.Client.Session,System.String,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId})">
+            <summary>
+            Read values with specialized node set by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync``1(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{Opc.Ua.NodeId},``0)">
+            <summary>
+            Read values with specialized node set by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodes">the set of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId)">
+            <summary>
+            Read value with specialized node by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0)">
+            <summary>
+            Read value with specialized node by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Read values with specialized node id set by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync``1(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.String},``0)">
+            <summary>
+            Read values with specialized node id set by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeIds">the set of node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync(Opc.Ua.Client.Session,System.String)">
+            <summary>
+            Read value with specialized node id by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <returns>a value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync``1(Opc.Ua.Client.Session,System.String,``0)">
+            <summary>
+            Read value with specialized node id by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <typeparam name="T">the value type.</typeparam>
+            <returns>a value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.String)">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="range">the range of <see cref="T:System.String"/> like 0:1 or 0,2,4.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync(Opc.Ua.Client.Session,System.String,System.Int32,System.Int32)">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <returns>an value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync``1(Opc.Ua.Client.Session,System.String,System.Int32,System.Int32,``0[])">
+            <summary>
+            Read array values with specialized array node and range by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to read,default is 1.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync(Opc.Ua.Client.Session,System.String,System.Int32)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync``1(Opc.Ua.Client.Session,System.String,System.Int32,``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="index">the index to read.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync(Opc.Ua.Client.Session,System.String,System.Int32[])">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>an set value of <see cref="T:Opc.Ua.DataValue"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:Opc.Ua.NodeId"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.ReadAsync``1(Opc.Ua.Client.Session,System.String,System.Int32[],``0)">
+            <summary>
+            Read array value with specialized array node and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node of <see cref="T:System.String"/>.</param>
+            <param name="indexs">the indexs of array.</param>
+            <param name="defaultValue">the default value to return when read failed.</param>
+            <returns>an set value of <see cref="!:T"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write(Opc.Ua.Client.Session,System.ValueTuple{Opc.Ua.NodeId,System.Object}[])">
+            <summary>
+            Write values with specialized node ids.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write(Opc.Ua.Client.Session,System.ValueTuple{System.String,System.Object}[])">
+            <summary>
+            Write values with specialized node ids.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Object)">
+            <summary>
+            Write value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write(Opc.Ua.Client.Session,System.String,System.Object)">
+            <summary>
+            Write value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0[])">
+            <summary>
+            Write enum array values with specialized node.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,System.String,``0[])">
+            <summary>
+            Write enum array values with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,System.String,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,System.ValueTuple{Opc.Ua.NodeId,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,System.ValueTuple{System.String,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the array node.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,System.String,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the array node id.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,System.String,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,System.String,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.Write``1(Opc.Ua.Client.Session,System.String,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.ValueTuple{Opc.Ua.NodeId,System.Object}})">
+            <summary>
+            Write values with specialized node ids by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync(Opc.Ua.Client.Session,System.Collections.Generic.IEnumerable{System.ValueTuple{System.String,System.Object}})">
+            <summary>
+            Write values with specialized node ids by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Object)">
+            <summary>
+            Write value with specialized node id by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync(Opc.Ua.Client.Session,System.String,System.Object)">
+            <summary>
+            Write value with specialized node id by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0[])">
+            <summary>
+            Write enum values with specialized node by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,System.String,``0[])">
+            <summary>
+            Write enum values with specialized node id by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,System.String,``0)">
+            <summary>
+            Write enum value with specialized node id.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value of <see cref="!:T"/> to be write.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,System.ValueTuple{Opc.Ua.NodeId,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,System.ValueTuple{System.String,``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="values">the node id and value set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the array node.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,System.String,System.ValueTuple{``0,System.Int32}[])">
+            <summary>
+            Write array value with specialized array node id and index by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the array node id.</param>
+            <param name="values">the node value and index set to be write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,System.String,``0[],System.Int32,System.Int32)">
+            <summary>
+            Write array values with specialized node and offset with size by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="values">the value of <see cref="!:T"/> to be write.</param>
+            <param name="offset">the offset of array to write.</param>
+            <param name="size">the size to write,default is 0,the size is using values length.</param>
+            <typeparam name="T">the type of value.</typeparam>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,System.String,``0,System.Int32,System.Int32)">
+            <summary>
+            Write array value with specialized array node and offset with size by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="offset">the offset of array.</param>
+            <param name="size">the size to write.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,Opc.Ua.NodeId,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="node">the node.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.Extensions.SessionExtensions.WriteAsync``1(Opc.Ua.Client.Session,System.String,``0,System.Int32[])">
+            <summary>
+            Write array value with specialized array node and indexs by asynchronous.
+            </summary>
+            <param name="session">the <see cref="T:Opc.Ua.Client.Session"/> instance.</param>
+            <param name="nodeId">the node id.</param>
+            <param name="value">the value to be write.</param>
+            <param name="indexs">the indexs of array.</param>
+            <returns>a <see cref="T:System.Boolean"/> result.</returns>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaClientBuider.Dispose(System.Boolean)">
+            <inheritdoc/>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaClientBuider.Finalize">
+            <inheritdoc/>
+        </member>
+        <member name="M:GodSharp.Opc.Ua.Client.OpcUaClientBuider.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:GodSharp.Opc.Ua.OpcUaClient">
+            <summary>
+            The opc ua client
+            </summary>
+        </member>
+        <member name="F:GodSharp.Opc.Ua.OpcUaClientOptions.TransportProfile">
+            <summary>
+            <seealso cref="F:Opc.Ua.Profiles.UaTcpTransport"/>
+            </summary>
+        </member>
+    </members>
+</doc>
